@@ -32,3 +32,45 @@ console.log(aleatorio())
 //arrow function com 0 argumento
 //- os parênteses vazios marcam o lugar do argumento (obrigatório)
 let aleatorio2=() => Math.floor(Math.random()*1000)
+
+//situação alternativa 2: função com 1+ argumento
+//função tradicional com 1+ argumentos
+let imc =function(peso, altura){
+    return peso/(altura ** 2)
+}
+
+console.log(imc(87,1.78))
+
+//arrow function com 1+argumento
+//os parênteses dos argumentos são obrigatórios quando o número de argumentos é maior q 1
+let imc2=(peso, altura) => peso/(altura ** 2)
+
+console.log(imc2(87, 1.78))
+
+//conclusão: os parênteses só podem ser omitidos da lista de argumentos de uma arrow
+//function quando há UM e APENAS UM argumento.
+
+//situação alternativa 3: funções com mais de uma linha no corpo
+
+//função tradicional
+//5!=5*4*3*2*1 (120)
+
+let fatorial=function(n){
+    let res=1
+    for(let i=n; i >1; i--){
+        res*=i
+    }
+    return res
+}
+
+//arrow function com corpo maior que uma linha
+//não há como fazer otimizações quanto ao corpo da função
+let fatorial2= n => {
+    let res=1
+    for(let i=n; i>1; i--){
+        res *=i
+    }
+    return res
+}
+console.log(fatorial(5))
+console.log(fatorial2(5))
